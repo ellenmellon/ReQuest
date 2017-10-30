@@ -32,21 +32,13 @@ def multi_process_parse(fin, fout, isTrain, nOfNones):
     out_file.close()
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 4:
         print 'Usage:feature_generation.py -DATA -numOfProcesses -feature_freq_threshold'
         exit(1)
     data = sys.argv[1]
     feature_freq_threshold = int(sys.argv[3])
     indir = 'data/source/%s' % data
-    if int(sys.argv[3]) == 1:
-        outdir = 'data/intermediate/%s_emtype/rm' % data
-        requireEmType = True
-    elif int(sys.argv[3]) == 0:
-        outdir = 'data/intermediate/%s/rm' % data
-        requireEmType = False
-    else:
-        print 'Usage:feature_generation.py -DATA -numOfProcesses -emtypeFlag(0 or 1)'
-        exit(1)
+    outdir = 'data/intermediate/%s/rm' % data
 
     numOfProcesses = int(sys.argv[2])
     # NLP parse

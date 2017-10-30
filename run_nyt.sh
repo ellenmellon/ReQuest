@@ -13,7 +13,7 @@ echo ' '
 
 ### Train ReType on Relation Classification
 echo 'Step 2 Train ReQuest on Relation Classification'
-code/Model/request/request -data $Data -mode m -size 50 -negative 3 -threads 20 -alpha 0.0001 -samples 1 -iters 500 -lr 0.025 -qaMFWeight 0.3 -qaMMWeight 0.3
+code/Model/request/request -data $Data -mode m -size 50 -negative 4 -threads 20 -alpha 0.0001 -samples 1 -iters 500 -lr 0.025 -qaMFWeight 0.3 -qaMMWeight 0.3
 
 ### Evaluate ReType on Relation Classification
 echo 'Step 3 Evaluate ReQuest on Relation Classification'

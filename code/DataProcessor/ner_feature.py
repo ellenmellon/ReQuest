@@ -105,6 +105,7 @@ def pipeline(json_file, brown_file, outdir, requireEmType, isEntityMention):
         if count%10000 == 0:
             sys.stdout.write('process ' + str(count) + ' lines\r')
             sys.stdout.flush()
+        count += 1
         sentence = reader.next()
         if isEntityMention:
             mentions = sentence.entityMentions
@@ -124,7 +125,6 @@ def pipeline(json_file, brown_file, outdir, requireEmType, isEntityMention):
                 gx.write(m_id+'\t'+','.join([str(x) for x in feature_ids])+'\n')
                 gy.write(m_id+'\t'+','.join([str(x) for x in label_ids])+'\n')
                 mention_count += 1
-                count += 1
             except Exception as e:
                 print e.message, e.args
                 print sentence.articleId, sentence.sentId, len(sentence.tokens)
@@ -169,8 +169,6 @@ def pipeline_qa(json_file, brown_file, featurefile, labelfile, outdir, requireEm
         sentence = reader.next()
         question = sentence.articleId
         sentLabel = sentence.label
-        if sentLabel not in ['pos', 'neg']:
-            print sentLabel
         assert sentLabel != None
         if isEntityMention:
             mentions = sentence.entityMentions
@@ -224,7 +222,6 @@ def pipeline_qa(json_file, brown_file, featurefile, labelfile, outdir, requireEm
     qid = 0
     for question in question2mentions:
         if len(question2mentions[question]) < 2:
-            print question
             continue
         for mid in question2mentions[question]['pos']:
             qa_pair.write(mid+'\t'+str(qid)+'\t1.0\n')
@@ -365,5 +362,5 @@ if __name__ == "__main__":
     brown_file = sys.argv[3]
     outdir = sys.argv[4]
     pipeline(train_json, brown_file, outdir)
-    filter(featurefile=outdir+'/feature.map', trainfile=outdir+'/train_x.txt', featureout=outdir+'/feature.txt',trainout=outdir+'/train_x_new.txt', 1)
+    filter(featurefile=outdir+'/feature.map', trainfile=outdir+'/train_x.txt', featureout=outdir+'/feature.txt',trainout=outdir+'/train_x_new.txt', thres=1)
     pipeline_test(test_json, brown_file, outdir+'/feature.txt',outdir+'/type.txt', outdir)

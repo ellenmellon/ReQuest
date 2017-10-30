@@ -190,11 +190,7 @@ def prune(indir, outdir, strategy, feature_number, type_number, neg_label_weight
     print 'start feature_feature_qa part'
     f_pairs2count = defaultdict(int)
     with open(qa_x) as f1, open(feature_feature_qa,'w') as g:
-        ct = 0
         for line in f1:
-            ct += 1
-            if ct%1000 == 0:
-                print(ct)
             seg = line.strip('\r\n').split('\t')
             features = seg[1].split(',')
             for i in range(len(features)):
