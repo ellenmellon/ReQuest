@@ -73,13 +73,9 @@ if __name__ == "__main__":
 	threshold_list = [float(i)/100.0 for i in range(0, 101, step_size)]
 	print threshold_list[0], 'to', threshold_list[-1], ', step-size:', step_size / 100.0
 
-	if '_neg' in _data:
-		none_label_index = find_none_index(indir + '/type.txt')
-		print '[None] label index: ', none_label_index
-		result = tune_threshold(threshold_list, ground_truth, none_label_index)
-	else:
-		result = tune_threshold(threshold_list, ground_truth, None)
-
+	none_label_index = find_none_index(indir + '/type.txt')
+	print '[None] label index: ', none_label_index
+	result = tune_threshold(threshold_list, ground_truth, none_label_index)
 
 	### Output
 
