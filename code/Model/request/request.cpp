@@ -212,9 +212,9 @@ void TrainModel() {
 
     // sprintf(file_name, "%srm/emb_retypeRm_mention.txt", output_path);
     // node_M.output(file_name, binary);
-    sprintf(file_name, "%srm/emb_retypeRm_feature.txt", output_path);
+    sprintf(file_name, "%srm/emb_request_feature.txt", output_path);
     node_F.output(file_name, binary);
-    sprintf(file_name, "%srm/emb_retypeRm_type.txt", output_path);
+    sprintf(file_name, "%srm/emb_request_type.txt", output_path);
     node_Y.output(file_name, binary);
 }
 
@@ -233,7 +233,7 @@ int ArgPos(char *str, int argc, char **argv) {
 int main(int argc, char **argv) {
     int i;
     if (argc == 1) {
-        printf("ReType-RM\n\n");
+        printf("ReQuest\n\n");
         printf("Options:\n");
         printf("Parameters for training:\n");
         printf("\t-data <path>\n");
