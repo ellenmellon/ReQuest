@@ -2,6 +2,18 @@
 
 Source code and data for WSDM'18 paper *[Indirect Supervision for Relation Extraction Using Question-Answer Pairs]*. 
 
+## Performance
+Performance comparison with several *relation extraction* systems over KBP 2013 dataset (**sentence-level extraction**). 
+
+Method | Precision | Recall | F1 
+-------|-----------|--------|----
+Mintz (our implementation, [Mintz et al., 2009](http://web.stanford.edu/~jurafsky/mintz.pdf)) | 0.296 | 0.387 | 0.335 
+LINE + Dist Sup ([Tang et al., 2015](https://arxiv.org/pdf/1503.03578.pdf)) | **0.360** | 0.257 | 0.299 
+MultiR ([Hoffmann et al., 2011](http://raphaelhoffmann.com/publications/acl2011.pdf)) | 0.325 | 0.278 | 0.301 
+FCM + Dist Sup ([Gormley et al., 2015](http://www.aclweb.org/anthology/D15-1205)) | 0.151 | **0.498** | 0.300 
+CoType-RM ([Ren et al., 2017](https://arxiv.org/pdf/1610.08763v1.pdf)) | 0.342 | 0.339 | 0.340
+ReQuest ([Wu et al., 2018]) | 0.386 | 0.410 | **0.397**
+
 ## Dependencies
 
 We will take Ubuntu for example.
