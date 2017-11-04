@@ -1,6 +1,4 @@
-## **ReQuest**
-
-[Indirect Supervision for Relation Extraction Using Question-Answer Pairs](https://arxiv.org/abs/1710.11169) <br />
+## [Indirect Supervision for Relation Extraction Using Question-Answer Pairs](https://arxiv.org/abs/1710.11169) <br />
 *Zeqiu Wu, Xiang Ren, Frank F. Xu, Ji Li, Jiawei Han. WSDM 2018.*
 
 <br />
