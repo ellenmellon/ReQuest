@@ -60,7 +60,7 @@ ReQuest ([Wu et al., 2018](https://arxiv.org/abs/1710.11169)) | 0.386 | 0.410 | 
 
 #### **Resources**
 
-Codes and datasets have been uploaded to *[Github](https://github.com/ellenmellon/ReQuest)*
+Codes and datasets have been uploaded to *[Github](https://github.com/shanzhenren/ReQuest)*
 
 <br />
 
